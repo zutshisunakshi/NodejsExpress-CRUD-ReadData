@@ -1,0 +1,26 @@
+extend layout
+
+block content
+  h1 Your Book Details
+  p Here is a list of your Books!
+  p
+    a.btn.btn-default(href="/api") View Books Json
+  table.table
+    thead
+      tr
+        th Genre
+        th Title
+        th Author Name
+        th Year of Edition
+    tbody
+      if !books.length
+        tr
+          td(colspan=4) No book details added, to display!
+      else
+        each book in books
+          tr
+            td
+              a(href="/books/#{book.id}") #{book.genre}
+            td #{book.title}
+            td #{book.author}
+            td #{book.edition}

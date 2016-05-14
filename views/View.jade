@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .row
+    .col-md-6
+      h1 View a book detail
+       h4 Use back button in the browser to go back.
+      p
+       a.btn.btn-default(href="/api/#{book.id}") View Json for #{book.genre} 
+      form(role="form", method="post", action="/books/#{book.id}")
+        include viewform
+       
